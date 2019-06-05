@@ -1,0 +1,191 @@
+<tem>
+	<div class="template" id="edit_template">
+		<div data-id="monitor_index" class="h-all ovxh" style="margin-left:-4.5%;">
+			<div class="panel-body no-tb-padder">
+				<form class="bs-example form-horizontal xs-form">
+
+				<div data_tmp="detail_store_form">
+				  <div class="form-group">
+				  	  <label class="col-lg-2 control-label required">名称</label>
+				  	  <div class="col-lg-3">
+			          <input type="text" class="form-control input-sm" data-id="proofName" validate="required"/>
+			          <input type="hidden" data-id="proofId">
+			        </div>
+				  </div>
+			      <div class="form-group">
+				      <label class="col-lg-2 control-label required">连接方式</label>
+				      <div class="col-lg-3">
+				        <select data-id="connect_type" data-type="select">
+				        	<option value="http">http</option>
+				        	<option value="https">https</option>
+				        </select>
+				        <input type="hidden" data-id="monitorId">
+				        <input type="hidden" data-id="url_config_id">
+				      </div>
+			        <label class="col-lg-3 control-label pt0">端口</label>
+			        <div class="col-lg-3">
+			          <input type="text" class="form-control input-sm" data-id="monitor_port" maxlength="5" validate="port" />
+			        </div>
+			      </div>
+
+			      <div class="form-group">
+			        <label class="col-lg-2 control-label pt0">用户名</label>
+			        <div class="col-lg-3">
+			          <input type="text" class="form-control input-sm" maxlength="32" data-id="proxy_username" />
+			        </div>
+			        <div id="snmp_v1">
+			          <label class="col-lg-3 control-label pt0">密码</label>
+			          <div class="col-lg-3">
+			            <input type="password" class="form-control input-sm" data-id="proxy_password" />
+			          </div>
+			        </div>
+			      </div>
+
+			      <div class="form-group">
+			        <label class="col-lg-2 control-label pt0">代理IP</label>
+			        <div class="col-lg-3">
+			          <input type="text" class="form-control input-sm" data-id="proxy_ip" validate="ipv4"/>
+			        </div>
+			        <label class="col-lg-3 control-label pt0">代理端口</label>
+			        <div class="col-lg-3">
+			          <input type="text" class="form-control input-sm" data-id="proxy_port" maxlength="5" validate="port" />
+			        </div>
+			      </div>
+
+				    <div class="form-group">
+				      <label class="col-lg-2 control-label">验证状态码</label>
+				      <div class="col-lg-3">
+				        <div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="1" name="ischeckcode" data-id="ischeckcode" checked>
+							  <i></i>
+							  是
+							</label>
+							<label class="i-checks">
+							  <input type="radio" value="0" name="ischeckcode">
+							  <i></i>
+							  否
+							</label>
+						</div>
+				      </div>
+				      <label class="col-lg-3 control-label" data-check="ischeckcode">HTTP状态码</label>
+				      <div class="col-lg-3" data-check="ischeckcode">
+				        <input type="text" class="form-control input-sm" data-id="checkcode" value="404"/>
+				      </div>
+					</div>
+
+					<div class="form-group">
+				      <label class="col-lg-2 control-label">验证请求头</label>
+				      <div class="col-lg-3">
+				        <div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="1" name="ischeckheader" data-id="ischeckheader" checked>
+							  <i></i>
+							  是
+							</label>
+							<label class="i-checks">
+							  <input type="radio" value="0" name="ischeckheader">
+							  <i></i>
+							  否
+							</label>
+						</div>
+				      </div>
+				      <label class="col-lg-3 control-label" data-check="ischeckheader">HTTP请求头</label>
+				      <div class="col-lg-3" data-check="ischeckheader">
+				        <div id="validateRequestHead_add_btn" class="appendix_add_btn"><i class="icon-plus"></i></div>
+				        <div id="validateRequestHead_list" data-type="list">
+				        	
+				        </div>
+				      </div>
+					</div>
+
+					<div class="form-group">
+				      <label class="col-lg-2 control-label">验证请求体</label>
+				      <div class="col-lg-3">
+				        <div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="1" name="ischeckreponse" data-id="ischeckreponse" checked>
+							  <i></i>
+							  是
+							</label>
+							<label class="i-checks">
+							  <input type="radio" value="0" name="ischeckreponse">
+							  <i></i>
+							  否
+							</label>
+						</div>
+				      </div>
+				      <label class="col-lg-3 control-label" data-check="ischeckreponse">HTTP请求体</label>
+				      <div class="col-lg-3" data-check="ischeckreponse">
+				        <div id="validateRequestBody_add_btn" class="appendix_add_btn"><i class="icon-plus"></i></div>
+				        <div id="validateRequestBody_list" data-type="list">
+				        	
+				        </div>
+				      </div>
+					</div>
+
+					<div class="form-group">
+				      <label class="col-lg-2 control-label">请求方式</label>
+				      <div class="col-lg-3">
+				        <select data-id="request_method" data-type="select">
+				        	<option value="0">get</option>
+				        	<option value="1">post</option>
+				        </select>
+				      </div>
+				      <label class="col-lg-3 control-label required">请求URL</label>
+				      <div class="col-lg-3">
+				        <input type="text" class="form-control input-sm" data-id="proofUrl" validate="required,url"/>
+				      </div>
+					</div>
+
+					<div class="form-group">
+				      <label class="col-lg-2 control-label">超时时间(秒)</label>
+				      <div class="col-lg-3">
+				        <input type="text" class="form-control input-sm" data-id="timeout" validate="float3" value="0"/>
+				      </div>
+				      <label class="col-lg-3 control-label">字符集</label>
+				      <div class="col-lg-3">
+				        <select data-id="monitor_database_name" data-type="select">
+				        	<option value="GBK">GBK</option>
+				        	<option value="ISO-8859-1">ISO-8859-1</option>
+				        	<option value="UTF-8">UTF-8</option>
+				        </select>
+				      </div>
+						</div>
+					</div>
+
+					<div class="form-group" data-form="paramList">
+						<div class="col-lg-5">
+							<div class="form-group">
+					      <label class="col-lg-5 control-label">参数名称</label>
+					      <div class="col-lg-7">
+					        <input type="text" class="form-control input-sm" data-id="paramName" />
+					      </div>
+					     </div>
+							<div class="form-group">
+					      <label class="col-lg-5 control-label">参数值</label>
+					      <div class="col-lg-7">
+					        <input type="text" class="form-control input-sm" data-id="paramValue" />
+					      </div>
+							</div>
+						</div>
+			      		<div class="col-lg-1">
+						    <i class="rh-chevron-right prel" data-id="move_right" title="右移" style="z-index:2000;top:6px; left: 30px;"></i>
+							<i class="rh-chevron-left prel" data-id="move_left" title="左移" style="z-index:2000;top:50px; left: 9px;"></i>
+						</div>
+						<div class="col-lg-5">
+							<div class="table-div" data-id="paramList" style="height:150px;padding-left:15px;"></div>
+						</div>
+					</div>
+
+		      <div class="table-oper" style="padding-right:8.83%;display: none;">
+		        <a href="javascript:void(0);" class="dib monitor_btn_styl" data-type="test_btn_in_step5">
+		          <span>测试配置</span>
+		          <i></i>
+		        </a> 
+		      </div> 
+				</form>
+			</div>
+		</div>
+	</div>
+</tem>

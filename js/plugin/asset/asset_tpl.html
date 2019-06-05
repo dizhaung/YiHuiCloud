@@ -1,0 +1,234 @@
+<tem>
+	<div class="template" id="change_record_detail_template" >
+		<form class="bs-example form-horizontal xs-form">
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">变更项目 :</label>
+				<label class="col-lg-7 control-label tl" data-id="changeProperty"></label>
+			</div>
+
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">变更类型 :</label>
+				<label class="col-lg-7 control-label tl" data-id="changeType"></label>
+			</div>
+
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">原始内容 :</label>
+				<label class="col-lg-7 control-label tl" data-id="oldValue"></label>
+			</div>
+
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">变更内容 :</label>
+				<label class="col-lg-7 control-label tl" data-id="newValue"></label>
+			</div>
+
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">修改人 :</label>
+				<label class="col-lg-7 control-label tl" data-id="persion"></label>
+			</div>
+
+			<div class="form-group" >
+				<label class="col-lg-4 control-label tr">修改日期 :</label>
+				<label class="col-lg-7 control-label tl" data-id="updateDate"></label>
+			</div>
+		</form>
+	</div>
+
+	<!-- 资产查询 -->
+	<div class="template" id="query_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form">
+				<div class="form-group">
+				    <label class="col-lg-3 control-label tr">资产名称 :</label>
+					<div class="col-lg-3">
+						<input type="text" class="form-control input-sm" 
+							data-id="assetName" validate="stringLimit0"/>
+					</div> 
+
+					<label class="col-lg-2 control-label tr">操作系统类型 :</label>
+					<div class="col-lg-3">
+						<select class="form-control input-sm" data-id="osType" data-type="select">
+						</select>
+					</div>   
+				</div>
+
+				<div class="form-group">
+				    <label class="col-lg-3 control-label tr">安全域 :</label>
+					<div class="col-lg-3">
+						<div class="inputdrop" id="securityDomain"></div>
+					</div> 
+
+					<label class="col-lg-2 control-label tr">资产类型 :</label>
+					<div class="col-lg-3">
+						<div class="inputdrop" id="assetType"></div>
+					</div>					
+				</div>
+
+				<div class="form-group">
+				    <label class="col-lg-3 control-label tr">业务域 :</label>
+					<div class="col-lg-3">
+						<div class="inputdrop" id="bussinessDomain"></div>
+					</div>   
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-3 tr">
+						<div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="0" name="ipRadioStatus" data-id="ipRadioStatus" checked>
+							  <i></i>
+							  IPV4 :
+							</label>
+						</div>
+					</div>
+
+					<div class="col-lg-2" style="padding-right:0">
+				        <input type="text" class="form-control input-sm" data-id="ipRadioStatusStartIp" id="ipRadioStatusStartIp" validate="ipv4" queryValue>
+			        </div>
+
+			        <div class="col-lg-1 p0" style="width:auto;padding:0 6px">
+			        	-
+			        </div>
+
+			        <div class="col-lg-2" style="padding-left:0">
+			        	<input type="text" class="form-control input-sm" data-id="ipRadioStatusEndIp" id="ipRadioStatusEndIp" validate="ipv4" queryValue>
+			        </div>
+				</div>
+
+		        <div class="form-group" style="margin-bottom:31px">
+					<div class="col-lg-3 tr">
+						<div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="1" name="ipRadioStatus">
+							  <i></i>
+							  IPV6 :
+							</label>
+						</div>
+					</div>
+
+					<div class="col-lg-5" style="width:35%">
+				        <input type="text" class="form-control input-sm" data-id="ipRadioStatusIpv6" id="ipRadioStatusIpv6" validate="ipv6" queryValue disabled>
+			        </div>
+		        </div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 资产列表 -->
+	<div class="template" id="asset_list_tpl">
+		<div class="table_div" style="height:500px" id="table_1"></div>
+	</div>
+
+	<!-- 流量 -->
+	<div class="template" id="flow_template">
+		<div class="panel-body no-tb-padder prel">
+			<!-- 面板图 -->
+			<div class="clearfix" style="min-height:15px;text-align: center;margin-bottom:25px;margin-top: -5px;" id="port_div">
+				<!-- 面板tip -->
+				<form class="bs-example form-horizontal xs-form p10 pt15 ovh" data-name="interfaceTip" hidden="hidden">
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr p0">接口索引：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="interfaceInd"></label>
+						<label class="col-lg-3 control-label tr p0">接口名称：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="interfaceName"></label>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr p0">接口状态：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="currentStatusName"></label>
+						<label class="col-lg-3 control-label tr p0">管理状态：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="adminStatusName"></label>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr p0">入口流速：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="portalFlux"></label>
+						<label class="col-lg-3 control-label tr p0">出口流速：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="exportFlux"></label>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr p0">入口流量：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="fluxIn"></label>
+						<label class="col-lg-3 control-label tr p0">出口流量：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="fluxOut"></label>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr p0">总流量：</label>
+						<label class="col-lg-3 control-label tl p0" data-id="totalFlux"></label>
+					</div>
+				</form>
+			</div>
+			<!-- 表格 -->
+			<div class="prel" style="width:900px;height:280px;" id="table_flow_div_outer">
+				<input class="pabs form-control input-sm" type="text"
+						style="width:150px;top:-5px;left:0;display:none"
+						id="table_flow_search_inp" placeholder="搜索">
+				<div id="table_flow_div" class="table-div w-all h-all"></div>
+			</div>
+			<!-- 空提示 -->
+			<div class="pabs dn" id="table_flow_empty_div" 
+				style="left: 0;right: 0;top: 0;bottom: 0;background-color: #fff;z-index: 2000;">
+				<div class="df dfcenter w-all h-all" style="font-size:16px;font-weight:bold;">暂无数据</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入  -->
+	<div class="template" id="import_template">
+	  <div class="panel-body no-tb-padder">
+	      <form class="bs-example form-horizontal xs-form" enctype="multipart/form-data">
+	          <div class="form-group">
+	            <label class="col-lg-3 control-label">模板文件</label>
+	            <div class="col-lg-6">
+	                <div id="ptMap"></div>
+	            </div>
+	            <div class="col-lg-3" style="height:34px; padding-top: 2px;">
+	              <a class="btn ant-btn ant-btn-primary" id="import_tpl_btn">上传</a>
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <div class="col-lg-12">
+	                <div class="table_div" style="height:260px"></div>
+	            </div>
+	          </div>
+	      </form>
+	  </div>
+	</div>
+
+	<!-- 角色配置用户模板 -->
+	<div class="template" id="role_user_config_template">
+		<form class="bs-example form-horizontal xs-form" style="height: 300px;">
+			<div class="df fdr" id="user_panel">
+				<div class="df fdc" style="width: 210px;">
+					<div class="__panel_title" style="border-bottom: 1px solid rgb(221,221,221);">
+						<i class="icon-active mr10" style="font-size:12px;font-style: normal;cursor: pointer;" title="部门">部门</i>
+					</div>
+					<div class="__panel_body">
+						<ul id="depart" class="ztree" style="height:100%;overflow: auto"></ul>
+					</div>
+				</div>
+				<div class="df fdc" style="flex: 1;">
+					<div class="__panel_title">
+						待添加用户
+					</div>
+					<div class="__panel_body">
+						<div id="left_table" data-id="ipRang" class="table-div" style="height:240px"></div>
+					</div>
+				</div>
+				<div class="df fdc" style="width: 80px;">
+					<div class="__panel_title">
+					</div>
+					<div class="__panel_body">
+						<i class="rh-chevron-right prel" id="chevron-right" style="top: 80px; left: 20px;"></i>
+						<i class="rh-chevron-left prel" id="chevron-left" style="top: 140px; right: 1px;"></i>
+					</div>
+				</div>
+				<div class="df fdc" style="flex: 1;">
+					<div class="__panel_title">
+						已添加用户
+					</div>
+					<div class="__panel_body">
+						<div id="right_table" data-id="ipRange" class="table-div" style="height:240px"></div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</tem>

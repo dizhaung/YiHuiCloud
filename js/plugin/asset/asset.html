@@ -1,0 +1,390 @@
+<div class="panel-body no-tb-padder">
+	<div class="tab-container" id="tab">
+		<ul class="nav nav-tabs nav-justified" data-id="tab-ul">
+			<li>
+				<a href="javascript:void(0);">
+					<span>基本信息</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);">
+					<span>资产扩展信息</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);">
+					<span>凭证信息</span>
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content detail-info">
+			<div class="tab-pane mt15" id="asset_div">
+				<form class="bs-example form-horizontal xs-form">
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">资产名称 :</label>
+						<label class="col-lg-3 control-label tl" data-id="assetName"></label>
+
+						<label class="col-lg-2 control-label tr">资产编号 :</label>
+						<label class="col-lg-4 control-label tl" data-id="assetCode"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">业务域 :</label>
+						<label class="col-lg-3 control-label tl" data-id="bussinessDomainName"></label>
+
+						<label class="col-lg-2 control-label tr">安全域 :</label>
+						<label class="col-lg-4 control-label tl" data-id="securityDomainName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">主IP :</label>
+						<label class="col-lg-3 control-label tl" data-id="mainIp"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">资产状态 :</label>
+						<label class="col-lg-3 control-label tl" data-id="edTempStatusName"></label>
+
+						<label class="col-lg-2 control-label tr">资产类型 :</label>
+						<label class="col-lg-4 control-label tl" data-id="assetTypeName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">是否计算风险 :</label>
+						<label class="col-lg-3 control-label tl" 
+						data-id="isComputeRiskName"></label>
+
+						<label class="col-lg-2 control-label tr">是否运维资产 :</label>
+						<label class="col-lg-4 control-label tl" data-id="isOperationAssetName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">资产价值 :</label>
+						<label class="col-lg-3 control-label tl" 
+						data-id="assetValueName"></label>
+
+						<label class="col-lg-2 control-label tr">资产型号 :</label>
+						<label class="col-lg-4 control-label tl" data-id="assetModelName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">厂商 :</label>
+						<label class="col-lg-3 control-label tl" 
+						data-id="supplierName"></label>
+
+						<label class="col-lg-2 control-label tr">操作系统类型 :</label>
+						<label class="col-lg-4 control-label tl" data-id="osTypeName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">使用状态 :</label>
+						<label class="col-lg-3 control-label tl" data-id="assetStatusName"></label>
+
+						<label class="col-lg-2 control-label tr">CPU信息 :</label>
+						<label class="col-lg-4 control-label tl" data-id="cpu"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">内存信息 :</label>
+						<label class="col-lg-3 control-label tl" data-id="memory"></label>
+
+						<label class="col-lg-2 control-label tr">硬盘信息 :</label>
+						<label class="col-lg-4 control-label tl" data-id="disk"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">系统版本号 :</label>
+						<label class="col-lg-3 control-label tl" data-id="osVersion"></label>
+
+						<label class="col-lg-2 control-label tr">主机名 :</label>
+						<label class="col-lg-4 control-label tl" data-id="hostName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">Web控制台 :</label>
+						<label class="col-lg-3 control-label tl" data-id="webConsole"></label>
+
+						<label class="col-lg-2 control-label tr">使用人 :</label>
+						<label class="col-lg-4 control-label tl" data-id="user"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">物理位置 :</label>
+						<label class="col-lg-3 control-label tl" data-id="location"></label>
+
+						<label class="col-lg-2 control-label tr">责任人 :</label>
+						<label class="col-lg-4 control-label tl" data-id="liablePersonName"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">创建时间 :</label>
+						<label class="col-lg-3 control-label tl" data-id="createDate"></label>
+
+						<label class="col-lg-2 control-label tr">修改时间 :</label>
+						<label class="col-lg-4 control-label tl" data-id="updateDate"></label>
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane mt15" id="asset_append_div">
+				<form class="bs-example form-horizontal xs-form">
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">购置时间 :</label>
+						<label class="col-lg-2 control-label tl" data-id="buyDate"></label>
+
+						<label class="col-lg-3 control-label tr">购置价格（元） :</label>
+						<label class="col-lg-4 control-label tl" data-id="price"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">主要服务 :</label>
+						<label class="col-lg-2 control-label tl" data-id="serve"></label>
+						
+						<label class="col-lg-3 control-label tr">硬盘编号 :</label>
+						<label class="col-lg-4 control-label tl" data-id="diskCode"></label>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">合同信息 :</label>
+						<label class="col-lg-2 control-label tl" data-id="contractNo"></label>
+
+						<label class="col-lg-3 control-label tr">保修截止日期 :</label>
+						<label class="col-lg-4 control-label tl" data-id="warrantyDate"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">设备硬件序列号 :</label>
+						<label class="col-lg-2 control-label tl" data-id="deviceSerialNo"></label>
+
+						<label class="col-lg-3 control-label tr">设备品牌型号 :</label>
+						<label class="col-lg-4 control-label tl" data-id="deviceBrandNo"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">固定资产编号 :</label>
+						<label class="col-lg-2 control-label tl" data-id="fixedAssetNo"></label>
+
+						<label class="col-lg-3 control-label tr">售后单位电话 :</label>
+						<label class="col-lg-4 control-label tl" data-id="saleTel"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">报废时间 :</label>
+						<label class="col-lg-2 control-label tl" data-id="scrapDate"></label>
+
+						<label class="col-lg-3 control-label tr">报废操作人 :</label>
+						<label class="col-lg-4 control-label tl" data-id="scrapPerson"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">机柜号 :</label>
+						<label class="col-lg-2 control-label tl" data-id="number"></label>
+
+						<label class="col-lg-3 control-label tr">机柜大小 :</label>
+						<label class="col-lg-4 control-label tl" data-id="size"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">维保状况 :</label>
+						<label class="col-lg-2 control-label tl" data-id="status"></label>
+
+						<label class="col-lg-3 control-label tr">承载应用系统 :</label>
+						<label class="col-lg-4 control-label tl" data-id="applies"></label>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label tr">供货单位 :</label>
+						<label class="col-lg-9 control-label tl" data-id="supplyUnit"></label>
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane mt15" id="snmp_div">
+	        	<div class="w-all h-all prel" style="height:400px" id="tab1">
+	            	<div class="w-all h-all" style="padding-top:20px">
+	                	<div class="tab-content">
+		                    <!-- tab1 -->
+		                    <div class="" id="tab_snmp">
+		                    	<div style="border-bottom:1px solid #ddd;margin-bottom: 6px">SNMP</div>
+		                        <form class="bs-example form-horizontal xs-form form-plr5">
+		                            <div class="form-group">
+		                            	<label class="col-lg-3 control-label">版本 :</label>
+		                            	<!-- <label class="col-lg-2 control-label tl" data-id="snmpVersion"></label> -->
+		                            	<div class="col-lg-2" data-id="snmp">
+		                            		<select class="form-control input-sm" data-type="select" data-id="snmpVersion">
+									    		<option value="1">SNMP V1</option>
+									    		<option value="2">SNMP V2c</option>
+												<option value="3">SNMP V3</option>
+											</select> 
+		                        		</div>
+		                        	</div>
+
+		                    		<div id="snmp_v1">
+		                            	<div class="form-group">
+		                            		<label class="col-lg-3 control-label">读团体字 :</label>
+		                            		<label class="col-lg-2 control-label tl" data-id="snmpCommunity"></label>
+
+		                            		<label class="col-lg-3 control-label">写团体字 :</label>
+		                            		<label class="col-lg-4 control-label tl" data-id="snmpWCommunity"></label>
+		                            	</div>
+									</div>
+
+		                            <div id="snmp_v3" style="display:none">
+		                            	<div class="form-group">
+		                            		<label class="col-lg-3 control-label">用户名 :</label>
+		                            		<label class="col-lg-9 control-label tl" data-id="snmpUserName" encrypt></label>
+		                            	</div>
+
+		                            	<div class="form-group">
+		                            		<label class="col-lg-3 control-label">认证方式 :</label>
+		                            		<label class="col-lg-2 control-label tl" data-id="authWay"></label>
+
+		                            		<label class="col-lg-3 control-label">认证口令 :</label>
+		                            		<label class="col-lg-4 control-label tl" data-id="authPwd" encrypt></label>
+		                            	</div>
+
+		                            	<div class="form-group">
+		                                	<label class="col-lg-3 control-label">加密方式 :</label>
+		                                	<label class="col-lg-2 control-label tl" data-id="encryptionWay"></label>
+
+		                                	<label class="col-lg-3 control-label">加密口令 :</label>
+		                                	<label class="col-lg-4 control-label tl" data-id="encryptionPwd" encrypt></label>
+		                            	</div>
+
+		                            	<div class="form-group">
+		                            		<label class="col-lg-3 control-label">Context ID :</label>
+		                                	<label class="col-lg-2 control-label tl" data-id="context"></label>
+
+		                                	<label class="col-lg-3 control-label">Context Name :</label>
+		                                	<label class="col-lg-4 control-label tl" data-id="contextName"></label>
+		                            	</div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label class="col-lg-3 control-label">SNMP端口 :</label>
+		                            	<label class="col-lg-2 control-label tl" data-id="snmpPort"></label>
+
+		                            	<label class="col-lg-3 control-label">SNMP超时(秒) :</label>
+		                            	<label class="col-lg-4 control-label tl" data-id="timeOut" validate="number"></label>
+		                            </div>
+
+		                            <div class="form-group">
+		                           		<label class="col-lg-3 control-label">SNMP重试次数 :</label>
+		                            	<label class="col-lg-2 control-label tl" data-id="tryTimes" validate="number"></label>
+		                            </div>
+		                        </form>
+		                    </div>
+		                    <!-- tab2 -->
+		                    <div class="mt10" id="tab_telnet">
+		                    	<div style="border-bottom:1px solid #ddd;margin-bottom: 6px">Telnet</div>
+		                    	<form class="bs-example form-horizontal xs-form form-plr5">
+		                    		<div class="form-group">
+		                        		<label class="col-lg-3 control-label">用户名 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="monitorUserName"></label>
+
+		                        		<label class="col-lg-3 control-label">密码 :</label>
+		                        		<input type="password" class="col-lg-4 control-label tl" data-id="monitorPassWord" style="border: none;">
+		                        	</div>
+
+		                        	<div class="form-group">
+		                        		<label class="col-lg-3 control-label">端口号 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="monitorPort"
+		                        		 validate="number"></label>
+
+		                        		<label class="col-lg-3 control-label">超时(秒) :</label>
+		                        		<label class="col-lg-4 control-label tl" data-id="timeOut" validate="number"></label>
+		                    		</div>
+
+		                    		<div class="form-group">
+		                    			<label class="col-lg-3 control-label">登录提示符 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="loginPrompt"></label>
+
+		                        		<label class="col-lg-3 control-label">密码提示符 :</label>
+		                        		<label class="col-lg-4 control-label tl" data-id="passwordPrompt"></label>
+		                    		</div>
+
+		                    		<div class="form-group">
+		                        		<label class="col-lg-3 control-label">命令提示符 :</label>
+		                        		<label class="col-lg-9 control-label tl" data-id="commandPrompt"></label>
+		                    		</div>
+		                    	</form>
+		                	</div>
+		                    <!-- tab3 -->
+		                    <div class="mt10" id="tab_ssh">
+		                    	<div style="border-bottom:1px solid #ddd;margin-bottom: 6px">SSH</div>
+		                    	<form class="bs-example form-horizontal xs-form form-plr5">
+		                    		<div class="form-group">
+		                        		<label class="col-lg-3 control-label">用户名 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="monitorUserName"></label>
+
+		                        		<label class="col-lg-3 control-label">密码 :</label>
+		                        		<input type="password" class="col-lg-4 control-label tl" data-id="monitorPassWord" style="border: none;">
+		                    		</div>
+
+		                    		<div class="form-group">
+		                        		<label class="col-lg-3 control-label">端口号 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="monitorPort"
+		                        		 validate="number"></label>
+
+		                        		<!-- <label class="col-lg-3 control-label">超时(秒) :</label>
+		                        		<label class="col-lg-4 control-label tl" data-id="timeOut" validate="number"></label> -->
+		                    		</div>
+
+		                    		<!-- <div class="form-group">
+		                    			<label class="col-lg-3 control-label">登录提示符 :</label>
+		                        		<label class="col-lg-2 control-label tl" data-id="loginPrompt"></label>
+
+		                        		<label class="col-lg-3 control-label">密码提示符 :</label>
+		                        		<label class="col-lg-4 control-label tl" data-id="passwordPrompt"></label>
+		                    		</div>
+
+		                    		<div class="form-group">
+		                        		<label class="col-lg-3 control-label">命令提示符 :</label>
+		                        		<label class="col-lg-9 control-label tl" data-id="commandPrompt"></label>
+		                    		</div> -->
+		                    	</form>
+		                    </div>
+	                	</div>
+	            	</div>
+	        	</div>
+			</div>
+			
+			<!-- <div class="tab-pane mt15" id="lend_out_div">
+				<form class="bs-example form-horizontal xs-form">
+					<div class="form-group" >
+						<label class="col-lg-3 control-label tr">外借部门 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowDept"></label>
+
+						<label class="col-lg-2 control-label tr">外借人 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowUser"></label>
+					</div>
+
+					<div class="form-group" >
+						<label class="col-lg-3 control-label tr">电话 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowTel"></label>
+
+						<label class="col-lg-2 control-label tr">邮件 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowMail"></label>	
+					</div>
+
+					<div class="form-group" >
+						<label class="col-lg-3 control-label tr">外借时间 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowStartTime"></label>
+
+						<label class="col-lg-2 control-label tr">到期时间 :</label>
+						<label class="col-lg-3 control-label tl" data-id="borrowEndTime"></label>	
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane mt15" id="custom_div">
+				<form class="bs-example form-horizontal xs-form">
+					
+				</form>
+			</div> -->
+
+			<div class="tab-pane mt15">
+				<div id="change_record_div" class="table-div w-all" style="height:300px"></div>
+			</div>
+		</div>
+	</div>
+</div>

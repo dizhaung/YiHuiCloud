@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<script src="jquery.1.10.2.js"></script>
+		<script src="rangy-core.js"></script>
+		<script src="rangy-classapplier.js"></script>
+		<script src="rangy-textrange.js"></script>
+		<script src="rangy-highlighter.js"></script>
+		<style>
+			.selectClass{
+				position: relative;
+				color : blue;
+				font-size : 21px;
+			}
+			.remove{
+				position : absolute;
+				right : -5px;
+				top : -5px;
+				width: 10px;
+				height: 10px;
+				background-color : blue;
+				z-index: 9999;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width:300px;height:100px;word-wrap: break-word;" id="test">这是一段测试代码</div>
+	
+		<div style="width:1px;height:100px"></div>
+
+
+		<div style="width:200px;height:100px;border:1px solid #ddd"></div>
+	</body>
+
+	<script>
+		$("body").on("mouseover" ,".selectClass" ,function (){
+			if ($(this).find(".remove").size() > 0)
+				return false
+			$(this).append('<div class="remove"></div>')
+		})
+
+		$("body").on("mouseleave" ,".selectClass" ,function (){
+			$(this).find(".remove").remove()
+		})
+
+		$("body").on("click" ,".remove" ,function (){
+			var el_parent = $(this).parent()
+			el_parent.before(el_parent.text())
+			el_parent.remove()
+		})
+
+		window.onload = function() {
+		    rangy.init();
+		    cssApplier = rangy.createClassApplier("selectClass", true); 
+		    document.body.onmouseup = function() {
+		    	// console.log(rangy.getSelection())
+		        cssApplier.toggleSelection();
+		        window.getSelection().removeAllRanges();
+		    };
+		};
+	</script>
+
+</html>

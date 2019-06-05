@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<script type="text/javascript" src="/js/ip.js"></script>
+  	<script type="text/javascript" src="/js/init.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="icon.ico" media="screen"/>
+</head>
+<body class="app-darkblue" style="opacity:0">
+	<div class="pg-header" id="pg-header" style="display:none">
+		<div class="pg-header-menu">
+			<div class="pg-header-name active">
+				
+			</div>
+			<!-- 横向菜单 -->
+			<hormenu id="menu"></hormenu>
+			
+		</div>
+	</div>
+
+	<input type="hidden" id="index_timer_inp" />
+
+	<!-- 右侧内容 -->	
+	<div class="pg-container" id="pg-container">
+		<!-- 左侧二级菜单 -->
+		<div class="pg-left-menu-outer active" id="pg-left-menu-outer">
+			<!-- 收起展开按钮-->
+			<div class="menu-col-exp prel" id="menu_col_exp">
+				<div></div>
+			</div>
+			<div class="pg-left-menu tran5" id="pg_left_menu">
+				<ul class="pg-left-menu-ul" id="pg_left_menu_ul"></ul>
+			</div>
+		</div>
+
+		<div class="pg-content" id="pg-content">
+			<ul class="page-breadcrumb breadcrumb prel" id="menu-index" style="display:none">
+				<li>
+					<span id="menu_first"></span>
+				</li>
+				<li>
+					<span id="menu_second"></span>
+				</li>
+				<li class="active" id="menu_third"></li>
+				<div class="pabs" style="right: 20px; top: 12px;" id="menu_right_oper_div"></div>
+			</ul>
+			<div class="portal animated" id="content_div">
+				<!-- 正文内容 -->
+			</div>
+		</div>
+		<div class="pabs pg-content-msg tran5 selectBan" id="pg-content-msg" style="display:none">
+			<div class="dib prel pl10 bell-ring" style="color:#ec7063;"><i class="icon-bell"></i></div>
+			<div class="dib" style="padding-left:10px">您有新的待办事项，请及时处理。</div>
+			<div class="r" id="pg-content-msg-close"><i class="icon-remove" style="font-size:16px;opacity:0.6"></i></div>
+		</div>
+	</div>
+
+	<!-- 全局模板 -->
+	<tem id="index_template_tem">
+		<!-- 时间范围选择模板 -->
+		<div class="template" id="index_time_pick_template">
+			<form class="bs-example form-horizontal xs-form form-plr5">
+				<div class="form-group">
+				    <label class="col-lg-3 control-label">开始时间</label>
+				    <div class="col-lg-7">
+				        <div class="input-group w-all">
+					        <input type="text" class="form-control input-sm"
+					        	data-id="start_date" data-type="date" container="body">
+					    </div>
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label class="col-lg-3 control-label">结束时间</label>
+				    <div class="col-lg-7">
+				        <div class="input-group w-all">
+					        <input type="text" class="form-control input-sm"
+					        	data-id="end_date" data-type="date" container="body">
+					    </div>
+				    </div>
+				</div>
+			</form>
+		</div>
+
+		<!-- ip范围选择模板 -->
+		<div class="template" id="index_ip_range_template">
+			<form class="bs-example form-horizontal xs-form form-plr5">
+				<div class="form-group">
+					<div class="col-lg-3 tr">
+						<div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="0" name="ipRadioStatus" data-id="ipRadioStatus" checked>
+							  <i></i>
+							  IPV4
+							</label>
+						</div>
+					</div>
+
+					<div class="col-lg-3" style="padding-right:0;width: 165px">
+				        <input type="text" class="form-control input-sm" data-id="start_ip" data-tval="0" validate="ipv4">
+			        </div>
+
+			        <div class="col-lg-1 p0 mt5" style="width:auto;padding:0 6px">
+			        	-
+			        </div>
+
+			        <div class="col-lg-3" style="padding-left:0;width: 165px">
+			        	<input type="text" class="form-control input-sm" data-id="end_ip" data-tval="0" validate="ipv4">
+			        </div>
+				</div>
+
+		        <div class="form-group">
+					<div class="col-lg-3 tr">
+						<div class="radio">
+							<label class="i-checks">
+							  <input type="radio" value="1" name="ipRadioStatus">
+							  <i></i>
+							  IPV6
+							</label>
+						</div>
+					</div>
+
+					<div class="col-lg-6" style="width:53.5%">
+				        <input type="text" class="form-control input-sm" data-id="ipV6" data-tval="1" validate="ipv6" disabled>
+			        </div>
+		        </div>
+			</form>
+		</div>
+
+		<!-- 数值范围 -->
+		<div class="template" id="index_range_template">
+			<form class="bs-example form-horizontal xs-form form-plr5">
+				<div class="form-group" style="padding:0 20px">
+				    <div class="col-lg-5">
+				    	<input type="text" class="form-control input-sm" validate="number"/>
+				    </div>
+				    <div class="col-lg-2 tc" style="line-height:30px">
+				    	至
+				    </div>
+				    <div class="col-lg-5">
+				    	<input type="text" class="form-control input-sm" validate="number">
+				    </div>
+				</div>
+			</form>
+		</div>
+	</tem>
+	<audio id="massage_sound" data-key="" src="img/clap.wav"></audio>
+</body>
+</html>

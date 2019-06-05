@@ -1,0 +1,417 @@
+<div class="umElDialog-content-tab">
+	<ul>
+		<li>基本信息</li>
+		<li>扩展信息</li>
+		<li>凭证信息</li>
+	</ul>
+</div>
+
+<section>
+	<div class="__wrap" id="asset_div">
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>基本信息
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">资产名称</div>
+						<div class="__val"><span data-id="assetName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">资产编号</div>
+						<div class="__val"><span data-id="assetCode"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">业务域</div>
+						<div class="__val"><span data-id="bussinessDomainName"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">安全域</div>
+						<div class="__val"><span data-id="securityDomainName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">主IP</div>
+						<div class="__val"><span data-id="mainIp"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">资产状态</div>
+						<div class="__val"><span data-id="edTempStatusName"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">资产类型</div>
+						<div class="__val"><span data-id="assetTypeName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">是否计算风险</div>
+						<div class="__val"><span data-id="isComputeRiskName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">是否运维资产</div>
+						<div class="__val"><span data-id="isOperationAssetName"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">资产价值</div>
+						<div class="__val"><span data-id="assetValueName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">资产型号</div>
+						<div class="__val"><span data-id="assetModelName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">厂商</div>
+						<div class="__val"><span data-id="supplierName"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">操作系统类型</div>
+						<div class="__val"><span data-id="osTypeName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">使用状态</div>
+						<div class="__val"><span data-id="assetStatusName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">CPU信息</div>
+						<div class="__val"><span data-id="cpu"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">内存信息</div>
+						<div class="__val"><span data-id="memory"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">硬盘信息</div>
+						<div class="__val"><span data-id="disk"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">系统版本号</div>
+						<div class="__val"><span data-id="osVersion"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">主机名</div>
+						<div class="__val"><span data-id="hostName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">Web控制台</div>
+						<div class="__val"><span data-id="webConsole"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">使用人</div>
+						<div class="__val"><span data-id="user"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">物理位置</div>
+						<div class="__val"><span data-id="location"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">责任人</div>
+						<div class="__val"><span data-id="liablePersonName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">创建时间</div>
+						<div class="__val"><span data-id="createDate"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">修改时间</div>
+						<div class="__val"><span data-id="updateDate"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key"></div>
+						<div class="__val"></div>
+					</div>
+					<div class="__col">
+						<div class="__key"> </div>
+						<div class="__val"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="__wrap" id="asset_append_div">
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>扩展信息
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">购置时间</div>
+						<div class="__val"><span data-id="buyDate"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">购置价格（元）</div>
+						<div class="__val"><span data-id="price"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">主要服务</div>
+						<div class="__val"><span data-id="serve"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">硬盘编号</div>
+						<div class="__val"><span data-id="diskCode"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">合同信息</div>
+						<div class="__val"><span data-id="contractNo"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">保修截止日期</div>
+						<div class="__val"><span data-id="warrantyDate"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">设备硬件序列号</div>
+						<div class="__val"><span data-id="deviceSerialNo"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">设备品牌型号</div>
+						<div class="__val"><span data-id="deviceBrandNo"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">固定资产编号</div>
+						<div class="__val"><span data-id="fixedAssetNo"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">售后单位电话</div>
+						<div class="__val"><span data-id="saleTel"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">报废时间</div>
+						<div class="__val"><span data-id="scrapDate"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">报废操作人</div>
+						<div class="__val"><span data-id="scrapPerson"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">机柜号</div>
+						<div class="__val"><span data-id="number"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">机柜大小</div>
+						<div class="__val"><span data-id="size"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">维保状况</div>
+						<div class="__val"><span data-id="status"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">承载应用系统</div>
+						<div class="__val"><span data-id="applies"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">供货单位</div>
+						<div class="__val"><span data-id="supplyUnit"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key"> </div>
+						<div class="__val"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="__wrap">
+		<div class="umElDialog-panel" id="tab_snmp">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>SNMP
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">版本</div>
+						<div class="__val"><span data-id="snmp">
+							<select class="form-control input-sm" data-type="select" data-id="snmpVersion">
+					    		<option value="1">SNMP V1</option>
+					    		<option value="2">SNMP V2c</option>
+								<option value="3">SNMP V3</option>
+							</select></span> 
+						</div>
+					</div>
+					<div class="__col">
+						<div class="__key"></div>
+						<div class="__val"></div>
+					</div>
+					<div class="__col">
+						<div class="__key"> </div>
+						<div class="__val"></div>
+					</div>
+				</div>
+				<div class="__row" id="snmp_v1">
+					<div class="__col">
+						<div class="__key">读团体字</div>
+						<div class="__val"><span data-id="snmpCommunity"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">写团体字</div>
+						<div class="__val"><span data-id="snmpWCommunity"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key"></div>
+						<div class="__val"></div>
+					</div>
+				</div>
+				<div id="snmp_v3" style="display: none;">
+					<div class="__row">
+						<div class="__col">
+							<div class="__key">用户名</div>
+							<div class="__val"><span data-id="snmpUserName" encrypt></span></div>
+						</div>
+						<div class="__col">
+							<div class="__key">认证方式</div>
+							<div class="__val"><span data-id="authWay"></span></div>
+						</div>
+						<div class="__col">
+							<div class="__key">认证口令</div>
+							<div class="__val"><span data-id="authPwd" encrypt></span></div>
+						</div>
+					</div>
+					<div class="__row">
+						<div class="__col">
+							<div class="__key">加密方式</div>
+							<div class="__val"><span data-id="encryptionWay"></span></div>
+						</div>
+						<div class="__col">
+							<div class="__key">加密口令</div>
+							<div class="__val"><span data-id="encryptionPwd" encrypt></span></div>
+						</div>
+						<div class="__col">
+							<div class="__key">Context ID</div>
+							<div class="__val"><span data-id="context"></span></div>
+						</div>
+					</div>
+					<div class="__row">
+						<div class="__col">
+							<div class="__key">Context Name</div>
+							<div class="__val"><span data-id="contextName"></span></div>
+						</div>
+						<div class="__col">
+							<div class="__key"></div>
+							<div class="__val"></div>
+						</div>
+						<div class="__col">
+							<div class="__key"></div>
+							<div class="__val"></div>
+						</div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">SNMP端口</div>
+						<div class="__val"><span data-id="snmpPort"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">SNMP超时(秒)</div>
+						<div class="__val"><span data-id="timeOut"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">SNMP重试次数</div>
+						<div class="__val"><span data-id="tryTimes"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="umElDialog-panel" id="tab_telnet">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>Telnet
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">用户名</div>
+						<div class="__val"><span data-id="monitorUserName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">密码</div>
+						<div class="__val"><span data-id="monitorPassWord"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">端口号</div>
+						<div class="__val"><span data-id="monitorPort"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">超时(秒)</div>
+						<div class="__val"><span data-id="timeOut"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">登录提示符</div>
+						<div class="__val"><span data-id="loginPrompt"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">密码提示符</div>
+						<div class="__val"><span data-id="passwordPrompt"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">命令提示符</div>
+						<div class="__val"><span data-id="commandPrompt"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key"></div>
+						<div class="__val"></div>
+					</div>
+					<div class="__col">
+						<div class="__key"></div>
+						<div class="__val"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="umElDialog-panel" id="tab_ssh">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>SSH
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">用户名</div>
+						<div class="__val"><span data-id="monitorUserName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">密码</div>
+						<div class="__val"><span data-id="monitorPassWord"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">端口号</div>
+						<div class="__val"><span data-id="monitorPort"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,27 @@
+{
+	"resultCode": 0,
+	"resultMsg":"",
+	"resultObj" :
+ 	[
+ 		{
+ 		 "label":"系统",
+ 		 "name":"1",
+ 		 "children":[
+	 		 			{
+	 		 				"label":"首页" ,"path":"/系统/首页", "href":"/index","icon":"oper_index",
+	 		 				"children":[]
+	 		 			},
+	 		 			{
+	 		 				"label":"用户管理" ,"path":"/系统/用户管理", "href":"/user/list","icon":"oper_index",
+	 		 				"children":[]
+	 		 			},
+	 		 			{
+	 		 				"label":"功能管理" ,"path":"/系统/功能管理","icon":"oper_index",
+	 		 				"children":[
+	 		 					{"label":"设备管理" ,"path":"/系统/功能管理/设备管理","href":"/feature/device/list","icon":"oper_index"}
+	 		 				]
+	 		 			}
+	 				]
+ 		}
+ 	]
+ }

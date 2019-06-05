@@ -1,0 +1,78 @@
+<section class="ant-header">
+	<div class="ant-header-title">
+		<span class="__title">设备列表</span>
+		<ul class="ant-header-title-oper">
+			<li>
+				<button class="btn ant-btn ant-btn-primary" id="add_btn">新设备录入</button>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="ant-body">
+	<div class="ant-body-block" style="flex:1">
+		<div class="ant-body-table">
+			<div class="ant-body-table-title">
+				<span class="__title"><i></i>设备列表</span>
+			</div>
+			<div class="ant-body-table-advanced" id="advanced_expand_div">
+				<div class="ant-row">
+					<div class="ant-col">
+						<span>所在地</span>
+						<div><input type="text" class="form-control" placeholder="" search-data="faultNO"></div>
+					</div>
+					<div class="ant-col">
+						<span>关键字</span>
+						<div><input type="text" class="form-control" placeholder="" search-data="faultNO"></div>
+					</div>
+				</div>
+				<div class="ant-row ant-btn-row">
+					<button class="btn ant-btn ant-btn-primary" id="search_btn">查询</button>
+					<button class="btn ant-btn" id="reset_btn">重置</button>
+				</div>
+				<div class="ant-body-table-content">
+					<div class="ant-table" id="table_div"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+$(document).ready(function (){
+
+	var list_header = [
+								{text:'序号',name:"",increment:true},
+								{text:'设备编号',name:"userAccount"},
+								{text:'设备名称',name:"userAccount"},
+								{text:'机主姓名',name:"userAccount"},
+								{text:'所在位置',name:"userAccount"},
+								{text:'用户余额',name:"userAccount"},
+						   ]
+
+	var index_oper = [
+						{icon:"rh-icon rh-edit" ,text:"详情" ,aclick:edit_template_init},
+						{icon:"rh-icon rh-delete" ,text:"解绑" ,aclick:delete_list_init}
+					 ]
+	list_list()
+
+	function list_list()
+	{
+		g_grid.render($("#table_div") ,{
+			//url : "",
+			header : list_header,
+			data : [{userAccount : 'test'},{userAccount : 'test'}],
+			oper: index_oper,
+			operWidth:"150px",
+		})
+	}
+
+	function edit_template_init(){
+		alert(1)
+	}
+
+	function delete_list_init(){
+
+	}
+
+})
+</script>

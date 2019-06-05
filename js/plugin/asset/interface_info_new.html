@@ -1,0 +1,153 @@
+<style>
+	.label-inp{
+	  border: 1px solid #ccc;
+	  border-color: #cfdadd;
+	  border-radius: 4px;
+	  padding: 5px 30px 5px 10px;
+	  height: 30px;line-height: 1.5;
+	}
+</style>
+<section style="display: block;">
+	<div class="__wrap" id="detail_form">
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>条件查询
+			</div>
+			<div class="__content __kv" style="padding: 5px 30px 0 30px">
+				<div class="df mb10 p10" style="align-items:center;background-color:#fff;padding-left:20px;" id="query_form1">
+					<label style="margin-bottom:0">时间范围：</label>
+					<div style="width:135px">
+						<select class="form-control input-sm" data-type="select" id="time_range_sel">
+							<option value="cDay">本日</option>
+							<option value="cWeek">本周</option>
+							<option value="cMonth">本月</option>
+							<option value="week">上一周</option>
+							<option value="month">上一月</option>
+							<option value="custom">自定义</option>
+						</select>
+					</div>
+				    <label style="margin-left:54px;margin-bottom:0">开始时间：</label>
+					<label style="margin-left:10px;margin-bottom:0; width: 180px;" class="label-inp" id="start_date"></label>
+					<i style="margin-left:10px;" class="glyphicon glyphicon-calendar"></i>
+					<input type="text" id="start_btn" style="opacity: 0; position: relative;width: 14px;right: 14px;cursor: pointer;">
+					<label style="margin-left:40px;margin-bottom:0">结束时间：</label>
+					<label style="margin-left:10px;margin-bottom:0;width: 180px;" class="label-inp" id="end_date"></label>
+					<i style="margin-left:10px;" class="glyphicon glyphicon-calendar"></i>
+					<input type="text" id="end_btn" style="opacity: 0; position: relative;width: 14px;right: 14px;cursor: pointer;">
+				    <div style="margin-left:40px;">
+				    	<a class="btn ant-btn ant-btn-primary" id="query_btn">查询</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>接口明细
+			</div>
+			<div class="__content __kv">
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">接口索引</div>
+						<div class="__val"><span data-id="interfaceInd"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">管理IP</div>
+						<div class="__val"><span data-id="interfaceIp"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">连接资产</div>
+						<div class="__val"><span data-id="linkEdName"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">资产名称</div>
+						<div class="__val"><span data-id="assetName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">资产类型</div>
+						<div class="__val"><span data-id="assetTypeName"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">接口入口流速</div>
+						<div class="__val"><span data-id="portalFlux"></span></div>
+					</div>
+				</div>
+				<div class="__row">
+					<div class="__col">
+						<div class="__key">接口入口出速</div>
+						<div class="__val"><span data-id="exportFlux"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">接口状态</div>
+						<div class="__val"><span data-id="currentStatus"></span></div>
+					</div>
+					<div class="__col">
+						<div class="__key">接口描述</div>
+						<div class="__val"><span data-id="interfaceDesc"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>流量图相关
+			</div>
+			<div class="__content __kv">
+				<div class="df" style="flex-direction: row; margin-bottom: 15px;">
+					<div style="flex:1; padding: 0 5px;">
+						<div class="chart-title">端口入口流速信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_flux_enter_chart_div"></div>
+					</div>
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">端口出口流速信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_flux_export_chart_div"></div>
+					</div>
+				</div>
+				<div class="df" style="flex-direction: row;margin-bottom: 15px;">
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">端口入口错误信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_error_enter_chart_div"></div>
+					</div>
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">端口出口错误信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_error_export_chart_div"></div>
+					</div>
+				</div>
+				<div class="df" style="flex-direction: row;">
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">端口入口丢包信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_loss_enter_chart_div"></div>
+					</div>
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">端口出口丢包信息 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="flow_loss_export_chart_div"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="umElDialog-panel">
+			<div class="__title">
+				<i class="__icon_baseinfo"></i>平均流速
+			</div>
+			<div class="__content __kv">
+				<div class="df" style="flex-direction: row;">
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">平均入口流速 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="avg_enter_chart_div"></div>
+					</div>
+					<div style="flex:1;padding: 0 5px;">
+						<div class="chart-title">平均出口流速 (kbps)</div>
+						<div class="w-all p5" style="height:280px" id="avg_export_chart_div"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style type="text/css">
+	.umElDialog-title{position: fixed; top: 0; width: 100%;border-bottom: 1px solid rgb(229, 229, 229); z-index: 9999;}
+	.umElDialog-content{margin-top: 50px;}
+</style>

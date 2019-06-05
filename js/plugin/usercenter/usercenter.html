@@ -1,0 +1,115 @@
+<html>
+ <head></head>
+ <body>
+  <tem> 
+   <div class="template" id="usercenter_pop_div" style="height:400px;"> 
+    <div class="w-all h-all prel" style="padding:0 40px 0 100px" id="global_tab"> 
+     <div class="w-all h-all bdd"> 
+      <div class="tab-content"> 
+       <!-- tab1 消息管理 --> 
+       <div class="tab-pane p10" id="tab_message"> 
+        <div id="msg_nav" style="width:100%;height:30px;line-height:30px;overflow:hidden;"> 
+         <div id="msg_nav_inbox_btn" class="dib l prel" style="color:#1199c4">
+            <i class="icon-sort-up" style="position:absolute;left:14px;top:20px;"></i>
+          收件箱
+         </div> 
+         <div class="tc l" style="width:10px;height:30px;line-height:30px;color: #aaaaaa;">
+           | 
+         </div> 
+         <div id="msg_nav_outbox_btn" class="l prel" style="height:30px;line-height:30px;text-align:center;cursor:pointer;color: #aaaaaa;">
+            <i class="icon-sort-up" style="position: absolute;left:14px;top:20px;display: none;"></i>
+          已发送
+         </div> 
+        </div> 
+        <div id="msg_con"> 
+         <div id="msg_con_inbox"> 
+          <!-- 操作栏 --> 
+          <div class="table-oper" id="table_oper" style="line-height:20px;margin-top:-28px;margin-bottom:5px;padding:10px 0 0 0"> 
+           <a href="javascript:void(0)" id="database_del_btn" class="bgblue"> <span>批量删除</span></a> 
+          </div> 
+          <div class="tab-div mt10" data-id="msg_inbox_table_div" id="msg_inbox_table_div" data-type="tpl"> 
+          </div> 
+          <div class="tab-div mt10 dn" data-id="msg_outbox_table_div" id="msg_outbox_table_div" data-type="tpl"> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+
+       <!-- tab2 待办工作 --> 
+       <div class="tab-pane p10" id="tab_work"> 
+        <div class="tab-div" data-id="work_table_div" data-type="tpl"></div> 
+       </div> 
+
+       <!-- tab3 公告信息 --> 
+       <div class="tab-pane p10" id="tab_bulletin"> 
+       </div>
+       
+       <!-- tab4 故障提醒 --> 
+       <div class="tab-pane p5" id="tab_fault"> 
+        <!-- 操作栏 --> 
+        <div class="tr" id="table_oper" style="padding:12px 10px 0 0;"> 
+         <a href="javascript:void(0)" id="database_ignore_btn" class="btn ant-btn"> <span>忽略</span> </a> 
+         <a href="javascript:void(0)" id="database_work_btn" style="display: none;"> <span>生成工单</span> </a> 
+        </div> 
+        <div class="tab-div" data-id="fault_table_div" data-type="tpl" style="margin-top: 2px;"></div> 
+       </div> 
+       <!-- tab5 性能提醒 --> 
+       <div class="tab-pane p5" id="tab_property"> 
+        <!-- 操作栏 --> 
+        <div class="tr" id="table_oper" style="padding:12px 10px 0 0;"> 
+         <a href="javascript:void(0)" id="database_ignore_btn" class="btn ant-btn"> <span>忽略</span> </a> 
+         <a href="javascript:void(0)" id="database_work_btn" style="display: none;"> <span>生成工单</span> </a> 
+        </div> 
+        <div class="tab-div" data-id="property_table_div" data-type="tpl" style="margin-top: 2px;"></div> 
+       </div>
+       <!-- tab6 安全提醒 --> 
+       <div class="tab-pane p5" id="tab_security">
+        <!-- 操作栏 --> 
+        <div class="tr" id="table_oper" style="padding:12px 10px 0 0;"> 
+         <a href="javascript:void(0)" id="database_ignore_btn" class="btn ant-btn"> <span>忽略</span> </a> 
+         <a href="javascript:void(0)" id="database_work_btn" style="display: none;"> <span>生成工单</span> </a> 
+        </div> 
+        <div class="tab-div" data-id="security_table_div" data-type="tpl" style="margin-top: 2px;"></div> 
+       </div> 
+      </div> 
+     </div> 
+     <ul class="pabs v-ul" data-id="tab-ul" style="top:0;left:20px;width:80px"> 
+      <li data-nav="message">消息管理<i class="usercenter_tab_spot dn"></i></li> 
+      <li data-nav="work">待办工作<i class="usercenter_tab_spot dn"></i></li> 
+      <li data-nav="bulletin">公告信息<i class="usercenter_tab_spot dn"></i></li> 
+      <li data-nav="fault">故障提醒<i class="usercenter_tab_spot dn"></i></li> 
+      <li data-nav="property">性能提醒<i class="usercenter_tab_spot dn"></i></li>
+      <li data-nav="security">安全提醒<i class="usercenter_tab_spot dn"></i></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="template" id="index_user_password_change"> 
+    <div class="panel-body no-tb-padder"> 
+     <form class="bs-example form-horizontal xs-form form-plr5"> 
+      <div class="form-group"> 
+       <label class="col-lg-4 control-label required">旧密码</label> 
+       <div class="col-lg-6"> 
+        <input type="password" class="form-control input-sm"
+          data-id="oldPwd" validate="required" encrypt/> 
+       </div> 
+      </div> 
+      <div class="form-group"> 
+       <label class="col-lg-4 control-label required">新密码</label> 
+       <div class="col-lg-6"> 
+        <input type="password" class="form-control input-sm"
+          data-id="newPwd" validate="required,password" encrypt/> 
+       </div> 
+      </div> 
+      <div class="form-group"> 
+       <label class="col-lg-4 control-label required">确认新密码</label> 
+       <div class="col-lg-6"> 
+        <input type="password" class="form-control input-sm"
+          data-id="newPwdConf" validate="required,password" encrypt/> 
+       </div> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </tem>
+ </body>
+</html>

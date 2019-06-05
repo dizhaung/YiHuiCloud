@@ -1,0 +1,595 @@
+<tem>
+<div class="template" id="order_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div class="form-group">
+				<h1 style="text-align:center;">事件处置单</h1>
+			</div>
+			<div class="form-group">
+
+			    <label class="col-lg-2 control-label" queryStr>填写日期：</label>
+			    <div class="col-lg-2">
+			    	<label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+
+			    <label class="col-lg-2 control-label" queryStr>起草人：</label>
+			    <div class="col-lg-2">
+			        <label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+
+			    <label class="col-lg-2 control-label" queryStr>编号：</label>
+			    <div class="col-lg-2">
+			        <label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="col-lg-2 control-label" queryStr>工单名称：</label>
+			    <div class="col-lg-2">
+		        	<input type="text" class="form-control input-sm" data-id="assetName" queryValue required> 
+		        </div>
+		        <label class="col-lg-2 control-label" queryStr>资产：</label>
+			    <div class="col-lg-2" style="position:relative">
+			    	<input class="inputdrop" data-id="edName" queryValue >
+		        	<a href="javascript:void(0);" id="asset_btn"
+		        		style="float: right; position:absolute; bottom: 6px;right:20px;">
+						<i class="icon-search"></i>
+					</a> 
+		        </div>
+			    <label class="col-lg-2 control-label" queryStr>工单等级：</label>
+			    <div class="col-lg-2">
+		        	<input type="text" class="form-control input-sm" data-id="assetName" queryValue required> 
+		        </div>
+			</div>
+			<div class="form-group">
+			    <label class="col-lg-2 control-label" queryStr>安全域：</label>
+			    <div class="col-lg-2">
+		        	<div data-id="sdomainName" class="inputdrop"></div>
+		        </div>
+		        <label class="col-lg-2 control-label" queryStr>业务域：</label>
+			    <div class="col-lg-2">
+		        	<div data-id="bdomainName" class="inputdrop"></div>
+		        </div>
+			</div>
+			<div class="form-group">
+			    <div class="tab-pane">
+					<div class="panel-body no-tb-padder">
+						<form class="bs-example form-horizontal xs-form" id="form">
+							<div class="table-oper" id="table_oper">
+								<a href="javascript:void(0);" id="case_btn">
+									<span>相关案例</span>
+									<i class="icon-search"></i>
+								</a>
+							</div>
+							<div id="table_in_query_case" class="table-div" style="height: 378px"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-2 control-label" queryStr style="padding:0;">事件描述：</label>
+				<div class="col-lg-10" style="padding:0;">
+					<textarea class="form-control input-sm" data-id="supMemo"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+			    <div class="tab-pane">
+					<div class="panel-body no-tb-padder" style="padding:15px 0;">
+						<form class="bs-example form-horizontal xs-form" id="form"  style="margin-top:60px;">
+							<div class="table-oper" id="table_oper">
+								<a href="javascript:void(0);" id="notice_btn">
+									<span>通知</span>
+									<i class="icon-search"></i>
+								</a>
+								<a href="javascript:void(0);" id="email_btn">
+									<span>邮件关联</span>
+									<i class="icon-search"></i>
+								</a>
+							</div>
+							<div id="table_in_query_notice" class="table-div" style="height: 378px"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="form-group" style="margin-bottom:40px;">
+			    <div class="col-lg-12">
+		        	<div class="checkbox">
+						  <label class="i-checks">
+						    <input type="checkbox"
+						    	data-id="" name="" value="" disabled><i></i> 返回上一环节
+						  </label>
+					</div>
+		       </div>
+			</div>
+			<div class="form-group">
+			    <label class="col-lg-2 control-label" queryStr style="padding:0;">处置人：</label>
+			    <div class="col-lg-4" style="padding:0;">
+			    	<label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+			    <label class="col-lg-2 control-label" queryStr>处置日期：</label>
+			    <div class="col-lg-4" style="padding:0;">
+			    	<label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="col-lg-2 control-label" queryStr style="padding:0;">附件：</label>
+			    <div class="col-lg-10" style="padding:0;">
+			    	<label type="text" class="form-control input-sm" data-id="assetName" queryValue></label>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="col-lg-2 control-label" queryStr style="padding:0;">处置结果：</label>
+			    <div class="col-lg-10" style="padding:0;">
+			        <textarea class="form-control input-sm" data-id="supMemo"></textarea>
+			    </div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 工单资产弹出框 -->
+<div class="template" id="asset_template">
+	<div class="panel-body no-tb-padder p0">
+		<div class="table-oper" id="table_oper" style="height: 0; padding: 0;">
+			<a href="javascript:void(0);" id="asset_query_btn" style="display:none">
+				<span>查询</span>
+				<i class="icon-search"></i>
+			</a>
+
+		</div>
+		<div id="table_in_asset" class="table-div" style="height: 450px"></div>
+	</div>
+</div>
+
+<!--资产查询模板-->
+<div class="template" id="asset_query_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div class="form-group">
+		       <label class="col-lg-2 control-label" queryStr>资产名称</label>
+		       <div class="col-lg-4">
+		          <input type="text" class="form-control input-sm" data-id="edName" queryValue>
+		       </div>
+		       <label class="col-lg-3 control-label" queryStr>操作系统类型</label>
+		       <div class="col-lg-3">
+		          <input type="text" class="form-control input-sm" data-id="assetName" queryValue>
+		       </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label" queryStr>安全域</label>
+		       <div class="col-lg-4">
+		             <div data-id="sdomainName" class="inputdrop"></div>
+			   </div>
+		       <label class="col-lg-2 control-label" queryStr>业务域</label>
+		       <div class="col-lg-4">
+					<div id="bdomainName" class="inputdrop"></div>
+			    </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label" queryStr>安全类型</label>
+		       <div class="col-lg-4">
+		       		<div data-id="className" class="inputdrop"></div>
+		       </div>
+			</div>
+			
+			<!-- 源IP -->
+			<div class="form-group">
+			      <div class="col-lg-2" style="padding-left: 35px;padding-right:0">
+			          <label class="i-switch bg-primary m-t-xs m-r" style="margin-right: 0">
+			            <input type="radio" checked="" name="switch" value="IPV4">
+			            <i></i>
+			          </label>
+			          <label queryStr>IPV4</label>
+			      </div>
+			      <div class="col-lg-4">
+			        <input type="text" class="form-control input-sm" disabled data-id="startIp" id="startIp" validate="ipv4" queryValue>
+			      </div>
+			      <div class="col-lg-1 p0" style="width:auto;padding:0 17px">
+			        -
+			      </div>
+			      <div class="col-lg-4">
+			        <input type="text" class="form-control input-sm" disabled data-id="endIp" id="endIp" validate="ipv4" queryValue>
+			      </div>
+			</div>
+
+		    <div class="form-group">
+			    <div class="col-lg-2" style="padding-left: 35px;padding-right:0">
+			        <label class="i-switch bg-warning m-t-xs m-r" style="margin-right: 0">
+			          <input type="radio" name="switch" value="IPV6">
+			          <i></i>
+			        </label>
+			        <label queryStr>IPV6</label>
+			    </div>
+			      <div class="col-lg-4">
+			        <input type="text" class="form-control input-sm" disabled data-id="mainIp" id="mainIp" validate="ipv6">
+			      </div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 详情模板 -->
+<div class="template" id="detail_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">事件名称：</label>
+		       <div class="col-lg-4">
+		        	<label type="text" class="control-label tl" data-id="faultName"></label>
+		       </div>
+		       <label class="col-lg-2 control-label">当前状态：</label>
+		       <div class="col-lg-4">
+		       		<label type="text" class="control-label tl" data-id="currentStatus"></label>
+		       </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">安全域：</label>
+		       <div class="col-lg-4">
+		       		<label type="text" class="control-label tl" data-id="sdomainName"></label>
+		       </div>
+		       <label class="col-lg-2 control-label">业务域：</label>
+		       <div class="col-lg-4">
+		       		<label type="text" class="control-label tl" data-id="bdomainName"></label>
+		       </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">资产名称：</label>
+		       <div class="col-lg-4">
+			          <label type="text" class="control-label tl" data-id="edName"></label>
+		       </div>
+		       <label class="col-lg-2 control-label">资产编号：</label>
+		       <div class="col-lg-4">
+		              <label type="text" class="control-label tl" data-id="edCode"></label>
+			    </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">资产IP：</label>
+		       <div class="col-lg-4">
+		              <label type="text" class="control-label tl" data-id="ipvAddress"></label>
+			    </div>
+			    <label class="col-lg-2 control-label">监控器名称：</label>
+		       <div class="col-lg-4">
+		              <label type="text" class="control-label tl" data-id="monitorName"></label>
+			   </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">事件类型：</label>
+		       <div class="col-lg-4">
+		              <label type="text" class="control-label tl" data-id="className"></label>
+			   </div>
+		       <label class="col-lg-2 control-label">事件等级：</label>
+		       <div class="col-lg-4">
+		             <label type="text" class="control-label tl" data-id="faultLevel"></label>
+			    </div>
+			</div>
+
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">发生时间：</label>
+		       <div class="col-lg-4">
+	              <label type="text" class="control-label tl" data-id="enterDate"></label>
+	              <a href="javascript:void(0);" id="detailmore_btn" style="float:right;position:relative;bottom:-6px;right:55px">
+						<i class="icon-search"></i>
+				  	</a>
+		        </div>
+		        <label class="col-lg-2 control-label">恢复时间：</label>
+		       <div class="col-lg-4">
+	              <label type="text" class="control-label tl" data-id="updateDate"></label>
+		        </div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-2 control-label">执行人：</label>
+		       	<div class="col-lg-4">
+		            <label type="text" class="control-label tl" data-id="carryperson"></label>
+			   	</div>
+		        <label class="col-lg-2 control-label">状态：</label>
+		        <div class="col-lg-4">
+	                <label type="text" class="control-label tl" data-id="faultStatus"></label>
+		        </div>
+			</div>
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">事件描述：</label>
+		       <div class="col-lg-10" >
+	              <label style="height:50px;" class="control-label tl" data-id="faultModule"></label>
+		        </div>
+			</div>
+			<div class="form-group">
+		       <label class="col-lg-2 control-label">解决方案：</label>
+		       <div class="col-lg-10">
+	              <label type="text" class="control-label tl" data-id="faultSolutions"></label>
+		        </div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!--详情内模板-->
+<div class="template" id="detailmore_template">
+	<div class="panel-body no-tb-padder">
+		<div id="table_in_query_detailmore" class="table-div" style="height: 278px"></div>
+	</div>
+</div>
+
+<!-- 相关案例弹出框 -->
+<div class="template" id="case_template">
+	<div class="panel-body no-tb-padder">
+		<div id="table_in_query_case" class="table-div" style="height: 378px"></div>
+	</div>
+</div>
+
+<!-- 相关案例详情 -->
+<div class="template" id="case_detail_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div class="form-group">
+		       <label class="col-lg-4 control-label">案例名称 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="title"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">关键字 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="caseKeyProperty"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">生成时间 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="createDate"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">工单名称 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="procName"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">案例相关告警 :</label>
+		       <label class="col-lg-8 contrSol-label tl" id="eventVOList"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">处置结果 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="disposalDesc"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">文档附件 :</label>
+		       <label class="col-lg-8 contrSol-label tl" id="appendixList"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-4 control-label">案例描述 :</label>
+		       <label class="col-lg-8 control-label tl" data-id="desc"></label>
+		    </div>
+		     <div class="form-group">
+		       <label class="col-lg-4 control-label">案例来源工单 :</label>
+		       <label class="col-lg-8 control-label tl" id="procName"></label>
+		    </div>
+		</form>
+	</div>
+</div>
+
+<!-- 通知弹出框 -->
+<div class="template workorder-notice-tpl" id="notice_template">
+	<div class="panel-body no-tb-padder" style="height:500px; padding:0;">
+		<div class="df fdr">
+			<div class="df fdc">
+				<div id="accordion_icon" class="__panel_title" style="border-bottom: 1px solid rgb(221,221,221);">
+					<i class="icon-active mr10" style="font-size:12px;font-style: normal;cursor: pointer;" title="按安全域显示"
+							data-url="securitydomainmanage/queryTreeChildrenList" 
+							data-key="sdTreeWithCnt"
+							data-type="SECURITY_DOMAIN_TREE">安全域</i>
+					<span style="">|</span>
+					<i class="ml10 mr10" style="font-size:12px;font-style: normal;cursor: pointer;" title="按业务域显示"
+							data-url="bussinessdomainmanage/queryTreeChildrenList"
+							data-key="bdTreeWithCnt"
+							data-type="BUSINESS_DOMAIN_TREE">业务域</i>
+					<span style="">|</span>
+					<i class="ml10"  style="font-size:12px;font-style: normal;cursor: pointer;"title="按用户组显示"
+							data-url="workflow/notify/queryUserGroupList"
+							data-type="BUSSINESS_DOMAIN_TREE">角色</i>
+				</div>
+				<div class="__panel_body">
+					<ul id="left_tree" class="ztree" style="overflow: auto; height:100%"></ul>
+				</div>
+			</div>
+			<div class="df fdc flex1">
+				<div class="df fdc flex1">
+					<div class="__panel_title">待添加用户</div>
+					<div class="__panel_body">
+						<div id="table_top" class="table-div" style="height:200px;"></div>
+					</div>
+				</div>
+				<div class="tc" style="height: 40px;">
+					<i class="rh-chevron-down" id="down_btn" style="margin: 10px 20px;"></i>
+					<i class="rh-chevron-up" id="up_btn" style="margin: 12px 20px;"></i>
+				</div>
+				<div class="df fdc flex1">
+					<div class="__panel_title">已添加用户</div>
+					<div class="__panel_body">
+						<div id="table_bottom" class="table-div prel" style="height:200px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 邮件通知 -->
+<div class="template" id="email_notice_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" enctype="multipart/form-data" id="query_form">
+			<div class="form-group">
+		        <label class="col-lg-2 control-label">标题:</label>
+		        <div class="col-lg-4">
+		        	<input type="hidden" name="jsonString" />
+		        	<input type="text" class="form-control input-sm tl" data-id="notifyTitle" id="notifyTitle" validate="required">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-lg-2 control-label">主送:</label>
+				<label class="col-lg-9 control-label tl" data-id="mainDeliveryName" id="mainDeliveryName" style="word-wrap:break-word"></label>
+				<input class="hidden" data-id="mainDelivery">
+		    </div>
+		    <div class="form-group">
+		        <label class="col-lg-2 control-label">电子邮箱:</label>
+		        <label class="col-lg-9 control-label tl" data-id="email" id="email" style="word-wrap:break-word"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-2 control-label">抄送(邮件组):</label>
+		       <div class="col-lg-4">
+					<select class="form-control input-sm" data-type="select" data-id="carbonCopy" id="carbonCopy">
+					</select>
+				</div>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-2 control-label">正文模板:</label>
+		       <div class="col-lg-4">
+					<select class="form-control input-sm" data-type="select" data-id="emailTemplateName" id="emailTemplateName">
+					</select>
+				</div>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-2 control-label">正文内容:</label>
+		       <div class="col-lg-9">
+					<textarea class="form-control input-sm tl" data-id="notifyContent" id="notifyContent" style="height:130px;"></textarea>
+				</div>
+		    </div>
+		</form>
+	</div>
+</div>
+
+<!-- 电话通知 -->
+<div class="template" id="phone_notice_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" enctype="multipart/form-data" id="query_form">
+			<div class="form-group">
+				<input type="hidden" name="jsonString" />
+		        <label class="col-lg-2 control-label">通知人 :</label>
+		        <label class="col-lg-9 control-label tl" data-id="mainDeliveryName" id="mainDeliveryName" style="word-wrap:break-word"></label>
+		        <input class="hidden" data-id="mainDelivery">
+		    </div>
+		    <div class="form-group">
+		        <label class="col-lg-2 control-label">办公电话 :</label>
+		        <label class="col-lg-9 control-label tl" data-id="telephone" id="telephone" style="word-wrap:break-word"></label>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-lg-2 control-label">手机 :</label>
+		        <label class="col-lg-9 control-label tl" data-id="mobile" id="mobile" style="word-wrap:break-word"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-2 control-label">通知内容 :</label>
+		       <div class="col-lg-9">
+					<textarea class="form-control input-sm tl" data-id="notifyContent" id="notifyContent" style="height:200px;"></textarea>
+				</div>
+		    </div>
+		</form>
+	</div>
+</div>
+
+<!-- 短信通知 -->
+<div class="template" id="message_notice_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" enctype="multipart/form-data" id="query_form">
+			<div class="form-group">
+			    <input type="hidden" name="jsonString" />
+		        <label class="col-lg-2 control-label">接收人 :</label>
+		        <label class="col-lg-9 control-label tl" data-id="mainDeliveryName" id="mainDeliveryName" style="word-wrap:break-word"></label>
+				<input class="hidden" data-id="mainDelivery">
+		    </div>
+		    <div class="form-group">
+		        <label class="col-lg-2 control-label">手机 :</label>
+		        <label class="col-lg-9 control-label tl" data-id="mobile" id="mobile" style="word-wrap:break-word"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-2 control-label">短信内容 :</label>
+		       <div class="col-lg-9">
+					<textarea class="form-control input-sm tl" data-id="notifyContent" id="notifyContent" style="height:200px;"></textarea>
+				</div>
+		    </div>
+		</form>
+	</div>
+</div>
+
+<!--工单通知详情-->
+<div class="template" id="notice_detail_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div id="email_div">
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">通知人:</label>
+			       <label class="col-lg-8 control-label tl" data-id="userName" style="word-wrap:break-word"></label>
+			    </div>
+			    <div class="form-group">
+			       <label class="col-lg-3 control-label">被通知人:</label>
+			       <label class="col-lg-8 control-label tl" data-id="mainDelivery" style="word-wrap:break-word"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">电子邮箱:</label>
+			       <label class="col-lg-8 control-label tl" data-id="socEmail"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">抄送:</label>
+			       <label class="col-lg-8 control-label tl" data-id="carbonCopyStr"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">邮件标题:</label>
+			       <label class="col-lg-8 control-label tl" data-id="notifyTitle"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">通知时间:</label>
+			       <label class="col-lg-8 control-label tl" data-id="notifyTime"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">附件:</label>
+			       <label class="col-lg-8 contrSol-label tl" id="appendixList"></label>
+				</div>
+				<div class="form-group">
+			       <label class="col-lg-3 control-label">通知内容:</label>
+			       <label class="col-lg-8 control-label tl" data-id="notifyContent"></label>
+				</div>
+			</div>
+			<div id="phone_sms_div">
+				<div id="table_in_notice_detail" class="table-div" style="height: 330px"></div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 电话通知修改模板 -->
+<div class="template" id="phone_update_template">
+	<div class="panel-body no-tb-padder">
+		<form class="bs-example form-horizontal xs-form" id="query_form">
+			<div class="form-group">
+		       <label class="col-lg-3 control-label">通知人:</label>
+		       <label class="col-lg-8 control-label tl" data-id="userName"></label>
+		    </div>
+		    <div class="form-group">
+		       <label class="col-lg-3 control-label">被通知人:</label>
+		       <label class="col-lg-8 control-label tl" data-id="mainDelivery"></label>
+			</div>
+			 <div class="form-group">
+		       <label class="col-lg-3 control-label">办公电话:</label>
+		       <label class="col-lg-8 control-label tl" data-id="phone"></label>
+			</div>
+			 <div class="form-group">
+		       <label class="col-lg-3 control-label">手机:</label>
+		       <label class="col-lg-8 control-label tl" data-id="mobile"></label>
+			</div>
+			<div class="form-group">
+		       <label class="col-lg-3 control-label">通知时间:</label>
+		       <label class="col-lg-8 control-label tl" data-id="notifyTime"></label>
+			</div>
+			<div class="form-group">
+		       <label class="col-lg-3 control-label">通知内容:</label>
+		       <div class="col-lg-8">
+					<textarea class="form-control input-sm tl" data-id="notifyContent" style="height:130px;"></textarea>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 邮件关联弹出框 -->
+<div class="template" id="email_template">
+	<div class="panel-body no-tb-padder">
+		<div id="table_in_query_email" class="table-div" style="height: 378px"></div>
+	</div>
+</div>
+</tem>

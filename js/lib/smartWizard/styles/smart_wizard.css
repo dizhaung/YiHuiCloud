@@ -1,0 +1,383 @@
+/*   
+  SmartWizard 2.0 plugin 
+  jQuery Wizard control Plugin
+  by Dipu
+  
+  http://www.techlaboratory.net
+  http://tech-laboratory.blogspot.com
+*/
+
+[data-name="monitorTitle"]
+{
+  margin-left:30px;
+  color: rgba(0,0,0,0.45);
+}
+
+[data-name="monitorTitle"] [data-value]{margin-right:10px;color:rgba(0,0,0,0.6);font-weight:bold;}
+
+.monitorElDialog{
+  display:flex;
+  flex-direction: column;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.monitorElDialog .umElDialog-content{flex:1}
+
+.monitorElDialog #um_step_4 .bdd{border:none;border-left:1px solid #ddd;}
+.monitorElDialog #um_step_1,.monitorElDialog #um_step_5{position:absolute;left:0;top:0;width:100%;height:100%;}
+.monitorElDialog #um_step_2 .icon-search{left:6px !important;}
+
+.swMain {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  margin:0;
+  padding:0 5px;
+  border: 0px solid #CCC;
+  overflow:visible;
+  float:left;
+  width: 100%;
+  height: 100%;
+  background-color:#fff;
+}
+.swMain .stepContainer {
+  display:block;
+  flex:1;
+  position: relative;
+  margin: 0;
+  padding:0;    
+  border: 0px solid #CCC;    
+  overflow-y:auto;
+  clear:both;
+  height:auto !important;
+}
+
+.swMain .stepContainer div.content {
+  display:block;
+  float:left;
+  margin: 0;
+  padding:5px;    
+  border-top: 1px solid #ddd; 
+  color:#666;   
+  /** background-color:#F8F8F8; */  
+  text-align:left;
+  overflow:visible;    
+  z-index:88; 
+  width:100%;
+  clear:both;
+}
+
+.swMain div.actionBar {
+  display:block;
+  position: relative; 
+  clear:both;
+  margin:             3px 0 0 0;   
+  border-top:             1px solid #CCC;
+  border-bottom:             1px solid #CCC;
+  padding:            0;    
+  color:              #5A5655;   
+  background-color:   #fff;
+  height:40px;
+  text-align:left;
+  overflow:auto;    
+  z-index:88; 
+  left:0;
+}
+
+.swMain .stepContainer .StepTitle {
+  display:block;
+  position: relative;
+  margin:0;   
+  border:1px solid #E0E0E0;
+  padding:5px;   
+  font: bold 16px Verdana, Arial, Helvetica, sans-serif; 
+  color:#5A5655;   
+  background-color:#E0E0E0;
+  clear:both;
+  text-align:left; 
+  z-index:88;
+  -webkit-border-radius: 5px;
+  -moz-border-radius  : 5px;    
+}
+.stepContainer .ip-table .err-div{top : 5px;}
+.swMain ul.anchor {
+  position: relative;
+  display:flex;
+  list-style: none;
+  padding:0;  
+  margin: 10px 0;      
+  clear: both;
+  border: 0px solid #CCCCCC;    
+  background: transparent; /*#EEEEEE */
+  width:1170px;
+  overflow:hidden;
+}
+.swMain ul.anchor li{ 
+  position: relative; 
+  display:block;
+  margin: 0;
+  padding: 0; 
+  border: 0px solid #E0E0E0;      
+  float: left;
+}
+.swMain ul.anchor li a {
+  display:block;
+  position:relative;
+  float:left;
+  background: rgba(0,0,0,0);
+  margin:0 10px;
+  padding-left: 35px;
+  min-width:150px;
+  height:40px;
+  line-height:40px;
+  text-decoration: none;
+  outline-style:none;
+  z-index:99;
+}
+
+.swMain ul.anchor li a .stepNumber{
+  position:relative;
+  float:left;
+  width:20px;
+  text-align: center;
+  padding-top:0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.swMain ul.anchor li a .stepDesc{
+  position:relative;
+  display:block;
+  float:left;
+  text-align: left;
+  font-size:15px;
+}
+.swMain ul.anchor li a .stepDesc small{
+  font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.swMain ul.anchor li a.selected{
+  background:url('/js/lib/smartWizard/images/wizard-selecting.png') no-repeat right center;
+  color:#ff6565;
+}
+
+.swMain ul.anchor li a.done { 
+  background:url('/js/lib/smartWizard/images/wizard-selected.png') no-repeat right center;
+  color:#3390fc;
+  z-index:99;
+}
+
+.swMain ul.anchor li a.disabled {
+  background:url('/js/lib/smartWizard/images/wizard-unselected.png') no-repeat right center;
+  color:#b6b6b6;
+  cursor:text;
+  opacity:1;
+}
+
+.swMain ul.anchor li a.disabled:hover {
+ 
+}
+
+.swMain ul.anchor li a.error {
+  color:#6c6c6c !important;  
+  background: #f08f75 !important;
+  border: 1px solid #fb3500 !important;      
+}
+.swMain ul.anchor li a.error:hover {
+  color:#000 !important;       
+}
+
+.swMain .buttonNext {
+  display:block;
+  float:right;
+  margin:5px 3px 0 3px;
+  padding:5px 22px;
+  text-decoration: none;
+  text-align: center;
+  font-size:13px;
+  color:#89909a;
+  outline-style:none;
+  border: 1px solid #ddd;
+  -moz-border-radius  : 4px; 
+  -webkit-border-radius: 4px;    
+}
+
+.swMain .buttonPrevious {
+  display:block;
+  float:right;
+  margin:5px 3px 0 3px;
+  padding:5px 22px;
+  text-decoration: none;
+  text-align: center;
+  font-size:13px;
+  color:#89909a;
+  outline-style:none;
+  -moz-border-radius  : 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.swMain .buttonFinish {
+  display:block;
+  float:right;
+  margin:5px 10px 0 3px;
+  padding:5px 22px;
+  text-decoration: none;
+  text-align: center;
+  font-size:13px;
+  color:#FFF !important;
+  outline-style:none;
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+  -moz-border-radius  : 4px; 
+  -webkit-border-radius: 4px;    
+}
+
+.swMain .buttonDisabled {
+  opacity: 0.6;
+  cursor:text;    
+}
+
+
+/* Form Styles */
+
+.txtBox {
+  border:1px solid #CCCCCC;
+  color:#5A5655;
+  font:13px Verdana,Arial,Helvetica,sans-serif;
+  padding:2px;
+  width:430px;
+}
+.txtBox:focus {
+  border:1px solid #EA8511;
+}
+
+.swMain .loader {
+  position:relative;  
+  display:none;
+  float:left;  
+  margin: 2px 0 0 2px;
+  padding:8px 10px 8px 40px;
+  border: 1px solid #FFD700; 
+  font: bold 13px Verdana, Arial, Helvetica, sans-serif; 
+  color:#5A5655;       
+  background: #FFF url(../images/loader.gif) no-repeat 5px;  
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+  z-index:998;
+}
+.swMain .msgBox {
+  position:relative;  
+  display:none;
+  float:left;
+  margin: 4px 0 0 5px;
+  padding:5px;
+  border: 1px solid #FFD700; 
+  background-color: #FFFFDD;  
+  font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
+  color:#5A5655;         
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+  z-index:999;
+  min-width:200px;  
+}
+.swMain .msgBox .content {
+  font: normal 12px Verdana,Arial,Helvetica,sans-serif;
+  padding: 0px;
+  float:left;
+}
+.swMain .msgBox .close {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  color: #CCC;
+  display: block;
+  float: right;
+  margin: 0 0 0 5px;
+  outline-style: none;
+  padding: 0 2px 0 2px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+.swMain .msgBox .close:hover{
+  color: #EA8511;
+  border: 1px solid #EA8511;  
+}
+.swMain .monitor-type-b{
+  margin:30px 10px 20px 15px;
+}
+.swMain .monitor-type-b > div{
+  padding: 0px 15px 0 25px;
+  font-size: 15px;
+  line-height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  margin-bottom: 20px;
+}
+.swMain .monitor-type-b > div.active{
+  color: #3390fc;
+}
+
+.swMain .monitor-type-s{
+  font-size: 14px!important;
+  line-height: 14px;
+  display: none;
+  padding: 0 5px;
+}
+.swMain .monitor-type-s .monitor-card{
+  float:left;
+  width: 15.86%;
+  height: 80px;
+  border: 1px solid #ddd;
+  margin: 0 0.4% 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition : all 0.2s;
+}
+
+.swMain .monitor-type-s .monitor-card:hover{transform:scale(1.05);}
+
+.swMain .monitor-type-s .monitor-card.active{
+  border: 1px solid #3390fc;
+  color: #3390fc;
+}
+.swMain .card-logo{
+  width: 25%;
+  min-width: 50px;
+  text-align: center;
+}
+.swMain .card-logo > i{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: 100% 100%;
+  
+}
+.swMain .card-name{
+  flex:1;
+  word-break: break-all;
+}
+.swMain #um_step_1 .mask{
+  background: none;
+}
+
+.swMain .wizard-no-edit{
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
+  color: #666;
+  margin: 20px 30px 10px 0;
+}
+.swMain .wizard-no-edit > i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/wizard-noEdtit.png') no-repeat center / cover;
+ position: relative;
+ top: 3px;
+ right: 4px;
+}

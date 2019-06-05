@@ -1,0 +1,71 @@
+<tem>
+
+	<!-- 忽略模板 -->
+	<div class="template" id="ignore_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form" id="query_form">
+				<div class="form-group">
+					<label class="col-lg-3 control-label">忽略原因：</label>
+					<div class="col-lg-9">
+						<textarea class="form-control input-sm" validate="required" data-id="reason"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 忽略是否同步模板 -->
+	<div class="template" id="ignore_sync_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form" id="query_form">
+				<div class="form-group">
+					<label class="col-lg-3 control-label">忽略原因：</label>
+					<div class="col-lg-9">
+						<textarea class="form-control input-sm" validate="required" data-id="reason"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-3 tr">
+						<div class="checkbox">
+						  <label class="i-checks">
+						    <input type="checkbox" name="synchronization"><i></i> 
+						  </label>
+						</div>
+					</div>
+					<label class="col-lg-9 control-label tl" style="color: #333;">同步事件忽略策略</label>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 忽略全部模板 -->
+	<div class="template" id="ignore_all_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form" id="query_form">
+				<div class="form-group">
+					<label class="col-lg-3 control-label">忽略原因：</label>
+					<div class="col-lg-9">
+						<textarea class="form-control input-sm" validate="required" data-id="ignoreDesc"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 自定义模板 -->
+	<div class="template" id="custom_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form">
+				<div class="form-group">
+			       <div class="col-lg-8" style="line-height: 34px;">
+			        	<label>请选择在列表中显示的列，最多只能选择八项</label>
+			       </div>
+			       <div class="col-lg-4 tr">
+			       <a class="btn ant-btn" id="sort_btn">排序</a></div>
+				</div>
+				<div id="col_list_div" class="p-sortable clearfix"></div>
+			</form>
+		</div>
+	</div>
+
+</tem>

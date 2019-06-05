@@ -1,0 +1,25 @@
+.login .content{
+	position :relative;
+	display: table;
+	width : auto;
+	height : auto;
+	margin : 0 auto;
+	top : 50%;
+	margin-top: -200px;
+}
+
+.login .login-form{position: relative;height : auto;padding : 20px;}
+
+.login .logo_main{margin : 0 auto;}
+
+.login .err-msg{text-align : center;}
+
+.login .login-form > div{margin-bottom : 20px;}
+
+.um-grid-empty{text-align:center;}
+
+.um-grid-empty span{top : 45%;}
+
+[data-id=loading-icon]{position:relative;left:45%;top:45%}
+
+.um_mask{z-index: 2000}

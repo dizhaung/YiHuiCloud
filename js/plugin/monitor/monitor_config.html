@@ -1,0 +1,126 @@
+<div class="template" id="monitor_config">
+    <div id="sfxxdj_div" data-id="sfxxdj_div" class="swMain">
+        <ul data-id="wizard_ul">
+            <li class="first-child"><a href="#um_step_1" id="step_1">
+            <span class="stepNumber">1</span>  
+            <span class="stepDesc">监控器类型</span></a>
+            </li>
+            <li><a href="#um_step_2" id="step_2">
+            <span class="stepNumber">2</span>
+            <span class="stepDesc">被监控资产</span></a>
+            </li>
+            <li><a href="#um_step_3" id="step_3">
+            <span class="stepNumber">3</span>  
+            <span class="stepDesc">基本信息</span></a>
+            </li>
+            <li><a href="#um_step_4" id="step_4">
+            <span class="stepNumber">4</span>
+            <span class="stepDesc">凭证信息</span></a>
+            </li>
+            <li><a href="#um_step_5" id="step_5">
+            <span class="stepNumber">5</span>
+            <span class="stepDesc">指标信息</span></a>
+            </li>
+        </ul>
+        <div id="um_step_1">
+        </div>
+        <div id="um_step_2" style="overflow:hidden;height:100%;">
+            <div class="table_div" id="monitored_asset" style="height:100%;"></div>
+            <!-- 保存监控器类型 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_type">
+            <!-- 保存监控器名称 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_name">
+            <!-- 保存监控器代理 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_agent">
+            <!-- 保存: 凭证信息配置选项名 SSH2 TELNET SNMP HTTP 等 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_certificate_type">
+            <!-- 保存凭证信息模板号 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_certificate_tpl">
+            <!-- 保存指标信息模板号 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_index_tpl">
+            <!-- 保存：监控器id -->
+            <input type="hidden" data-type="tempStore" data-id="temp_monitor_id">
+            <!-- 保存：被监控资产id序列，逗号分隔 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_monitored_asset">
+            <!-- 保存： 被监控资产的IP，逗号分隔 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_monitored_asset_ip">
+            <!-- 保存：凭证信息传出值 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_cert">
+            <!-- 保存：指标信息传出值 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_index">
+            <!-- 保存： 监控表空间 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_table_space">
+            <!-- 保存： 不监控表空间 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_not_table_space">
+            <!-- 保存： 第五步添加数据库实例信息 -->
+            <input type="hidden" data-type="tempStore" data-id="temp_database_instance">
+        </div>
+        <div id="um_step_3" style="overflow:hidden;height:100%;padding-top:35px">
+            <form class="bs-example form-horizontal xs-form" id="base_info" data-id="base_info" data-type="tpl">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label required">监控器名称</label>
+                    <div class="col-lg-3">
+                        <input type="text" maxlength="50" class="form-control input-sm" data-id="groupName" validate="required">
+                    </div>
+                    <label class="col-lg-2 control-label" queryStr>状态</label>
+                    <div class="col-lg-3">
+                        <div class="radio l">
+                            <label class="i-checks">
+                                <input type="radio" value="0" data-id="status" name="status" checked>
+                                <i></i>
+                                启用
+                            </label>
+                        </div>
+                        <div class="radio l ml5">
+                            <label class="i-checks">
+                                <input type="radio" value="1" name="status">
+                                <i></i>
+                                停用
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label required">轮询时间</label>
+                    <div class="col-lg-2">
+                        <select class="form-control input-sm" data-id="pollUnit" data-type="select">
+                            <option name="pollUnit" value="1">分</option>
+                            <option name="pollUnit" value="2">小时</option>
+                            <option name="pollUnit" value="3">天</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <input type="text" class="form-control input-sm" data-id="pollDate" maxlength="2" value="5" validate="required,between3~59">
+                    </div>
+                    <label class="col-lg-2 control-label required">代理服务器</label>
+                    <div class="col-lg-3">
+                        <select class="form-control input-sm" data-type="select" data-id="monitorAgent" validate="required">
+                        </select>
+                    </div>
+                </div>
+                 
+                <div class="form-group">
+                    <label class="col-lg-2 control-label required">重试次数</label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control input-sm" data-id="retryCount"
+                          validate="required,number" value="0">
+                    </div>
+                    <div class="col-lg-3" style="padding-left:0">
+                      <span style="line-height:30px;color: rgba(0,0,0,0.6);">(0次表示ping不通即告警。)</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" queryStr>备注</label>
+                    <div class="col-lg-8">
+                        <textarea class="form-control input-sm" maxlength="1024" data-id="remark"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="um_step_4" style="overflow:hidden;height:auto;">
+        </div>
+        <div id="um_step_5" style="overflow:hidden;">
+        </div>
+    </div>
+</div>

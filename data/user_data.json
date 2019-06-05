@@ -1,0 +1,8 @@
+{
+	"resultCode": 0,
+	"resultMsg":"",
+	"resultObj" :[
+					{"userAccount" : "test"},
+					{"userAccount" : "test"}
+				]
+}

@@ -1,0 +1,68 @@
+.hf-unit-div{
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.hf-unit-div.default{background-color: #15508a;}
+.hf-unit-div.grey{background-color: #eaeaea;}
+.hf-unit-div.darkblue{background-color: #2d4964;}
+.hf-unit-div i{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  opacity: 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.hf-unit-div.active i{opacity: 1;}
+
+.icon-menu-hf{
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url("/img/menu/hf.png");
+  background-size: 22px;
+  opacity: 1;
+}
+
+.icon-menu-hf:hover{
+  background: url("/img/menu/hf-active.png") no-repeat;
+  background-size: 22px;
+}
+
+.icon-menu-hf1{
+  display: inline-block;
+  background-image: url("/img/menu/hf1.png");
+  width: 20px;
+  height: 16px;
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  position: relative;
+  top:3px;
+}
+.icon-menu-message{
+  display: inline-block;
+  background-image: url("/img/menu/message.png");
+  width: 20px;
+  height: 16px;
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  position: relative;
+  top:3px;
+}
+
+.usercenter_tab_spot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffa880;
+  box-shadow: 0 0 3px #ffa880;
+  position: relative;
+  float: right;
+  margin-top: -5px;
+  margin-right: 10px;
+}

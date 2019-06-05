@@ -1,0 +1,118 @@
+<tem>
+	<!-- 查看基线 -->
+	<div id="query_baseline_template">
+		<div class="table-oper" id="table_oper">
+			<a href="javascript:void(0);" id="get">
+	            <span>获取</span>
+	        </a>
+	        <a href="javascript:void(0);" id="follow">
+	            <span>关注</span>
+	        </a>
+	        <a href="javascript:void(0);" id="Rfollow">
+	            <span>取消关注</span>
+	        </a>
+    	</div>
+    	<div class="pabs" style="left:15px;top:20px">
+    		<input type="text" class="form-control input-sm" style="width:150px" id="search_inp" placeholder="搜索">
+    	</div>
+		<div id="query_baseline_table" class="table_div" style="height:400px;"></div>
+	</div>
+	
+	<!-- 监控器查询弹出框 -->
+	<div id="query_monitor_template">
+		<div class="panel-body no-tb-padder">
+			<form class="bs-example form-horizontal xs-form">
+				<div class="form-group">
+					<label class="col-lg-3 control-label tr">监控器名称 :</label>
+					<div class="col-lg-8">
+						<input type="text" class="form-control input-sm" 
+							data-id="monitorName"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 监控器查询弹出框 -->
+	<div class="template" id="monitor_search_template">
+
+		<div class="panel-body no-tb-padder">
+			<div class="ant-body-table-advanced" style="height: 100px;">
+				<div class="ant-row">
+					<div class="ant-col">
+						<span>监控器名称</span>
+						<div><input type="text" class="form-control" placeholder="" search-data="codename"></div>
+					</div>
+					<div class="ant-col">
+						<span>主IP</span>
+						<div class="prel" id="ip"></div>
+					</div>
+					<div class="ant-col">
+						<span>代理服务器</span>
+						<div>
+						<!-- 
+							<div class="inputdrop" id="monitorAgent"></div>
+						-->
+							<select class="form-control input-sm" search-data="monitorAgent" id="monitorAgent" data-type="select"></select>
+						</div>
+					</div>
+				</div>
+				<div class="ant-row ant-btn-row">
+					<button class="btn ant-btn ant-btn-primary" id="search_btn">查询</button>
+					<button class="btn ant-btn" id="reset_btn">重置</button>
+				</div>
+			</div>
+			<div id="table_in_monitor" class="table-div" style="height: 450px"></div>
+		</div>
+	</div>
+
+	<!-- cpu 内存 磁盘历史记录查询 -->
+	<div id="query_cmd_history">
+		<div class="form-horizontal xs-form">
+			<div class="p10 bdd mb5">
+				<div class="form-group">
+					<label class="col-lg-2 control-label tr">开始时间：</label>
+					<div class="col-lg-6">
+					    <div class="input-group w-all">
+					      <input type="text" class="form-control input-sm" data-type="date" id="chooseStartDate">
+					    </div>
+					</div>
+					<div class="col-lg-4 tr">
+						<button class="btn ant-btn ant-btn-primary" id="query_btn">查询</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-2 control-label tr">结束时间：</label>
+					<div class="col-lg-6">
+					    <div class="input-group w-all">
+					      <input type="text" class="form-control input-sm" data-type="date" id="chooseEndDate">
+					    </div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-2 control-label tr">时间范围：</label>
+					<div class="col-lg-3">
+						<select class="form-control input-sm" data-type="select" id="time_range_sel">
+							<option value="1">最近一天</option>
+							<option value="7">最近一周</option>
+							<option value="30">最近一月</option>
+						</select>
+					</div>
+					<label class="col-lg-2 control-label tr" disk>选择磁盘：</label>
+					<div class="col-lg-3" disk>
+						<select class="form-control input-sm" data-type="select" id="disk_sel">
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="p10 bdd mb5" style="height : 200px">
+				<div class="w-all h-all" id="chart"></div>
+			</div>
+
+			<div class="p10 bdd mb5" style="height:auto;">
+				<div class="w-all" id="grid"></div>
+			</div>
+		</div>
+	</div>
+</tem>
